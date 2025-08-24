@@ -38,6 +38,11 @@ def get_db():
     finally:
         db.close()
 
+# Health check endpoint
+@app.get("/")
+def health_check():
+    return {"status": "ok"}
+
 @app.post("/queries", response_model=Query)
 def create_query(query: Query, db: Session = Depends(get_db)):
     db_query = QueryModel(**query.dict())
