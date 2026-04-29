@@ -4,9 +4,9 @@ from sqlalchemy import Column, Integer, String, create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base, Session
 from pydantic import BaseModel, Field
 from typing import List
-import os
+import os 
 
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://password:synapse-123@cloud-computing-class.postgres.database.azure.com:5432/queries_db")
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://cloud24shardul:suman123$@class-24-a-db-shardul.postgres.database.azure.com:5432/postgres")
 engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(bind=engine)
 Base = declarative_base()
